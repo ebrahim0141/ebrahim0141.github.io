@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smart Warehouse Management System</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="../css/warehouse.css" />
+
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <div class="header-text">
+                    <a href="../index.html" class="back-btn">← Back</a>
+                    <h1>Smart Warehouse Management System</h1>
+                    <p class="subtitle">
+                        A full ERP module built for inventory, warehouse tracking, product flow, and automated reporting.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <section class="overview">
+        <h2>Project Overview</h2>
+        <p>
+            This warehouse management system was designed to streamline stock flow, automate tracking,
+            improve warehouse efficiency, and support accurate real-time reporting. The platform includes
+            product management, stock-in/stock-out processes, barcode scanning, and multi-user roles.
+        </p>
+    </section>
+
+    <section class="project-info">
+        <div>
+            <h3>Role</h3>
+            <p>Full-Stack Developer</p>
+        </div>
+
+        <div>
+            <h3>Tech Stack</h3>
+            <ul>
+                <li>Laravel 11</li>
+                <li>React (Next.js) 14</li>
+                <li>REST API</li>
+                <li>MySQL, Mongodb</li>
+            </ul>
+        </div>
+
+        <div>
+            <h3>Timeline</h3>
+            <p>Sep 2024 — Otc 2025</p>
+        </div>
+    </section>
+
+    <section class="features">
+        <h2>Key Features</h2>
+        <ul>
+            <li>Product & Inventory Management</li>
+            <li>Stock In / Stock Out Workflow</li>
+            <li>Barcode/QR Scanning Support</li>
+            <li>Supplier & Purchase Module</li>
+            <li>Role-Based Access (Admin, Manager, Staff)</li>
+            <li>Real-Time Stock Reports & Dashboard</li>
+        </ul>
+    </section>
+    <!-- GALLERY -->
+    <section class="gallery">
+        <h2>Project Screenshots</h2>
+
+        <div class="carousel-container">
+            <button class="carousel-btn prev">❮</button>
+            <div class="carousel-track">
+                <div class="carousel-slide">
+                    <img src="../img/warehouse/Barcode.jpeg" alt="Barcode Scanning Page">
+                    <div class="caption">Barcode Scanning</div>
+                </div>
+                <div class="carousel-slide">
+                    <img src="../img/warehouse/Barcode2.jpeg" alt="Product List Page">
+                    <div class="caption">Product List</div>
+                </div>
+                <div class="carousel-slide">
+                    <img src="../img/warehouse/Dashboard.jpeg" alt="Stock In Page">
+                    <div class="caption">Stock In Workflow</div>
+                </div>
+                <div class="carousel-slide">
+                    <img src="../img/warehouse/Report.jpeg" alt="Reports Dashboard">
+                    <div class="caption">Reports Dashboard</div>
+                </div>
+            </div>
+            <button class="carousel-btn next">❯</button>
+            <div class="carousel-dots"></div>
+        </div>
+
+        <div class="carousel-dots"></div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>© 2025 Ebrahim Mia. All Rights Reserved.</p>
+            <div class="social-links">
+                <a href="https://www.facebook.com/ebrahim.sh.106" target="_blank"><i class="fab fa-facebook"></i></a>
+                <a href="https://github.com/ebrahim0141" target="_blank"><i class="fab fa-github"></i></a>
+                <a href="https://stackoverflow.com/users/12230521/ebrahim-mia?tab=profile" target="_blank"><i class="fab fa-stack-overflow"></i></a>
+                <a href="https://www.linkedin.com/in/ekme/" target="_blank"><i class="fab fa-linkedin"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        const track = document.querySelector('.carousel-track');
+        const slides = Array.from(track.children);
+        const nextBtn = document.querySelector('.next');
+        const prevBtn = document.querySelector('.prev');
+        const dotsContainer = document.querySelector('.carousel-dots');
+
+        let currentIndex = 0;
+
+        /* Create dots dynamically */
+        slides.forEach((_, i) => {
+            const dot = document.createElement("div");
+            if (i === 0) dot.classList.add("active");
+            dotsContainer.appendChild(dot);
+        });
+
+        /* Navigation dots */
+        const dots = Array.from(dotsContainer.children);
+
+        function updateCarousel() {
+            track.style.transform = `translateX(-${currentIndex * 100}%)`;
+
+            dots.forEach(dot => dot.classList.remove("active"));
+            dots[currentIndex].classList.add("active");
+        }
+
+        nextBtn.addEventListener("click", () => {
+            currentIndex = (currentIndex + 1) % slides.length;
+            updateCarousel();
+        });
+
+        prevBtn.addEventListener("click", () => {
+            currentIndex = (currentIndex - 1 + slides.length) % slides.length;
+            updateCarousel();
+        });
+
+        dots.forEach((dot, index) => {
+            dot.addEventListener("click", () => {
+                currentIndex = index;
+                updateCarousel();
+            });
+        });
+    </script>
+</body>
+</html>

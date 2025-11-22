@@ -1,0 +1,257 @@
+:root {
+    --primary-color: #1e56a0;
+    --secondary-color: #163172;
+    --accent-color: #d6e4f0;
+    --text-color: #333;
+    --light-text: #f8f9fa;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    font-family: "Inter", sans-serif;
+    background: #f6f6f6;
+    color: #333;
+    line-height: 1.7;
+    margin: 0;
+}
+
+/* Container */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+section {
+    max-width: 950px;
+    margin: 40px auto;
+    padding: 0 20px;
+}
+
+/* Header */
+header {
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    color: white;
+    padding: 2rem 0;
+}
+
+.header-content {
+    display: flex;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: center;
+    text-align: center !important;
+    position: relative;
+}
+
+@media (min-width: 768px) {
+    .header-content {
+        flex-direction: row;
+        text-align: left;
+    }
+}
+
+.header-text h1 {
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.header-text h2 {
+    font-size: 1.5rem;
+    font-weight: 400;
+    margin-bottom: 1rem;
+}
+
+/* Hero */
+.hero {
+    background: linear-gradient(to bottom right, #1a73e8, #4285f4);
+    padding: 60px 20px;
+    text-align: center;
+    color: #fff;
+}
+
+.hero h1 {
+    font-size: 42px;
+    margin-bottom: 10px;
+}
+
+.hero .subtitle {
+    font-size: 18px;
+    opacity: 0.9;
+    max-width: 700px;
+    margin: auto;
+}
+
+.back-btn {
+    position: absolute;
+    left: 30px;
+    top: 25px;
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+    opacity: 0.9;
+}
+
+/* Project Info Cards */
+.project-info {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 25px;
+}
+
+.project-info div {
+    background: white;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 18px rgba(0,0,0,0.06);
+}
+
+.project-info h3 {
+    margin: 0 0 10px 0;
+    font-size: 20px;
+}
+
+/* Features */
+.features ul {
+    padding-left: 20px;
+}
+
+.features li {
+    margin-bottom: 10px;
+}
+
+/* Image Gallery */
+.gallery h2 {
+    margin-bottom: 20px;
+}
+
+.img-gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+}
+
+.img-gallery img {
+    width: 100%;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+    box-shadow: 0 4px 18px rgba(0,0,0,0.08);
+}
+
+.img-gallery img:hover {
+    transform: scale(1.03);
+    box-shadow: 0 6px 25px rgba(0,0,0,0.14);
+}
+
+/* Footer */
+footer {
+    background: var(--primary-color);
+    color: white;
+    padding: 2rem 0;
+    text-align: center;
+}
+
+.social-links {
+    margin-top: 1rem;
+}
+
+.social-links a {
+    color: white;
+    font-size: 1.5rem;
+    margin: 0 0.5rem;
+    transition: color 0.3s ease;
+}
+
+.social-links a:hover {
+    color: var(--accent-color);
+}
+
+/* Carousel */
+.carousel-container {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    max-width: 900px;
+    margin: 30px auto;
+    border-radius: 14px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+}
+
+.carousel-track {
+    display: flex;
+    transition: transform 0.45s ease-in-out;
+}
+
+.carousel-slide {
+    min-width: 100%;
+    position: relative;
+}
+
+.carousel-slide img {
+    width: 100%;
+    display: block;
+    border-radius: 14px;
+}
+
+.carousel-slide .caption {
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+    color: #fff;
+    background: rgba(0,0,0,0.5);
+    padding: 5px 10px;
+    border-radius: 4px;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+/* Carousel Buttons */
+.carousel-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(0,0,0,0.45);
+    border: none;
+    color: white;
+    font-size: 24px;
+    padding: 10px 14px;
+    cursor: pointer;
+    border-radius: 50%;
+    transition: background 0.2s ease;
+    z-index: 10;
+}
+
+.carousel-btn:hover {
+    background: rgba(0,0,0,0.7);
+}
+
+.prev { left: 10px; }
+.next { right: 10px; }
+
+/* Carousel Dots */
+.carousel-dots {
+    display: flex;
+    justify-content: center;
+    margin-top: 12px;
+}
+
+.carousel-dots div {
+    width: 10px;
+    height: 10px;
+    margin: 5px;
+    background: #ccc;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.carousel-dots .active {
+    background: #1e56a0;
+}
