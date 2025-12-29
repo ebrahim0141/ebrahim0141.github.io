@@ -118,6 +118,32 @@
         .about-text {
             max-width: 800px;
         }
+
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1.3fr 0.5fr;
+            gap: 40px;
+            align-items: start;
+        }
+
+        /* Services section right align */
+        .about-grid > div:last-child {
+            justify-self: end;      
+            text-align: left;      
+            max-width: 700px;     
+        }
+
+        /* Mobile responsive */
+        @media (max-width: 768px) {
+            .about-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .about-grid > div:last-child {
+                justify-self: start;
+                max-width: 100%;
+            }
+        }
         
         /* Skills */
         .skills {
@@ -148,6 +174,24 @@
         }
         
         .skill-list li::before {
+            content: "•";
+            color: var(--primary-color);
+            font-weight: bold;
+            position: absolute;
+            left: 0;
+        }
+
+        .services-list {
+            list-style: none;
+        }
+        
+        .services-list li {
+            margin-bottom: 0.5rem;
+            position: relative;
+            padding-left: 1.5rem;
+        }
+        
+        .services-list li::before {
             content: "•";
             color: var(--primary-color);
             font-weight: bold;
@@ -354,12 +398,28 @@
 
     <!-- About Section -->
     <section class="about">
-        <div class="container">
-            <h2 class="section-title">About Me</h2>
-            <div class="about-text">
-                <p>A Full Stack Developer with around <script>document.write(new Date().getFullYear() - 2020);</script> years of hands-on experience specializing in backend engineering, API design, data flow optimization, and modern frontend development. Skilled in building production-ready applications using Laravel, Vue.js, and Next.js, with strong experience in RESTful API development, queue systems, caching, and scalable architecture.</p>
-                <p>I enjoy solving practical problems through clean, maintainable code and efficient system design. Currently, I am enhancing my skills in DevOps tools and cloud workflows to grow into a deployment-focused full-stack engineer.</p>
+        <div class="container about-grid">
+            <!-- About Me -->
+            <div>
+                <h2 class="section-title">About Me</h2>
+                <div class="about-text">
+                    <p>A Full Stack Developer with around <script>document.write(new Date().getFullYear() - 2020);</script> years of hands-on experience specializing in backend engineering, API design, data flow optimization, and modern frontend development. Skilled in building production-ready applications using Laravel, Vue.js, and Next.js, with strong experience in RESTful API development, queue systems, caching, and scalable architecture.</p>
+                    <p>I enjoy solving practical problems through clean, maintainable code and efficient system design. Currently, I am enhancing my skills in DevOps tools and cloud workflows to grow into a deployment-focused full-stack engineer.</p>
+                </div>
             </div>
+            <!-- Services -->
+            <div>
+                <h2 class="section-title">Services</h2>
+                <ul class="services-list">
+                    <li>Laravel Bug Fix</li>
+                    <li>API Feature Add</li>
+                    <li>Deploy + Update</li>
+                    <li>WordPress Customization</li>
+                    <li>Maintenance Contract</li>
+                    <li>Build website from scratch</li>
+                </ul>
+            </div>
+
         </div>
     </section>
 
@@ -524,7 +584,7 @@
             <div class="about-text">
                 <h3><a href="https://pust.ac.bd/" target="_blank">Pabna University of Science & Technology</a></h3>
                 <p>B.Sc. Engineering in Computer Science & Engineering (2014 – 2019)</p>
-                <p>Result: 2.81 out of 4.00</p>
+                <p>Result: 3.05 out of 4.00</p>
             </div>
             <div class="about-text">
                 <h3><a href="https://sherpurgovtcollege.edu.bd/" target="_blank">Sherpur Govt. (University) College</a></h3>
